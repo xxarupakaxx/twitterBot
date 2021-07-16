@@ -25,7 +25,7 @@ func main() {
 
 	e:=echo.New()
 	e.Use(middleware.Logger())
-	e.GET("/twitter_webhook",  HandlerCrcCheck)
+	e.POST("/twitter_webhook",  HandlerCrcCheck)
 	e.POST("/callback", func(c echo.Context) error {
 		return nil
 	})
